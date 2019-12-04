@@ -27,5 +27,10 @@
 
 <!-- notes -->
 * build an array with question objects
+* create a startQuiz function
+    * hide landing page
+    * reveal question 
+    * set timer
+    * runs getQuestion function
 
     

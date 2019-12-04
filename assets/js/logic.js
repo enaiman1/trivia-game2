@@ -7,6 +7,30 @@ let timerId
 const questionEl = document.getElementById("questions");
 const timerEl = document.getElementById("time");
 const choicesEl = document.getElementById("choices");
+const startBtn = document.getElementById("start");
 const submitBtn = document.getElementById("submit");
-const startBtn = document.getElementById("intials");
+const initialsEl = document.getElementById("initials");
 const feedbackEl = document.getElementById("feedback");
+
+// this function starts the game
+function startQuiz() {
+    // hides land page
+    var startScreen = document.getElementById("landingPage")
+    startScreen.setAttribute("class", "hide")
+
+    // un-hide question section
+    questionEl.removeAttribute("class");
+
+    // start timer
+    timerId = setInterval(, 1000);
+
+    // show starting time
+    timerEl.textContent = time;
+
+    // run getQuestion function
+    getQuestion();
+}
+
+
+// starts game
+startBtn.onclick = startQuiz;
