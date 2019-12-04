@@ -25,7 +25,7 @@
                 * button to go back
                 * button to clear highscore
 
-<!-- notes -->
+------- notes ----------
 * build an array with question objects
 * create a startQuiz function
     * hide landing page
