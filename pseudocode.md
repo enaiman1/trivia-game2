@@ -32,5 +32,6 @@
     * reveal question 
     * set timer
     * runs getQuestion function
+* time function
 
     

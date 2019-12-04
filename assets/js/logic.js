@@ -22,7 +22,7 @@ function startQuiz() {
     questionEl.removeAttribute("class");
 
     // start timer
-    timerId = setInterval(, 1000);
+    timerId = setInterval(clock, 1000);
 
     // show starting time
     timerEl.textContent = time;
@@ -31,6 +31,16 @@ function startQuiz() {
     getQuestion();
 }
 
+function clock(){
+    // update time
+    time--
+    timerEl.textContent = time;
+    // check if user ran out of time
+    if ( time <=0 ){
+        // run quiz end function
+        
+    }
+}
 
 // starts game
 startBtn.onclick = startQuiz;
