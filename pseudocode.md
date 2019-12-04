@@ -25,5 +25,7 @@
                 * button to go back
                 * button to clear highscore
 
+<!-- notes -->
+* build an array with question objects
 
     
