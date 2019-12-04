@@ -33,5 +33,6 @@
     * set timer
     * runs getQuestion function
 * time function
+* function for add questions and answer dynamically
 
     
