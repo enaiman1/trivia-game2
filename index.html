@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+    <!-- link to highscores -->
+    <div class="scores"><a href="highscores.html">View HighScores</a></div>
+
+    <div class="timer">Time: <span id="time">0</span></div>
+
+    <!-- main page -->
+    <div class="main">
+        <!-- landing page - this will be visiable when user first goes to the game -->
+        <div id="landingPage" class="start">
+            <h1>Quiz Challenge</h1>
+            <p>
+                Try to answer the following questions within the time
+                limit. Keep in mind that incorrect answers will penalize your
+                score/time by ten seconds!
+            </p>
+            <button id="start">Start Quiz</button>
+        </div>
+
+        <!-- game board - this will start hidden but will be visible when start button is clicked  -->
+        <div id="questions" class="hide">
+            <h2 id=questionTitle></h2>
+            <div id="choices" class="choices"></div>
+        </div>
+
+        <!-- end screen - this will stay hidden until game is over -->
+        <div id="resultScreen" class="hide">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="finalScore"></span>.</p>
+            <p> Enter initials: <input type="text" id="initials" max="3" />
+                <button id="submit">Submit</button>
+            </p>
+        </div>
+
+        <div id="feedback" class="feedback hide"></div>
+    </div>
+
+
+
+    <script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
 </body>
+
 </html>
