@@ -33,10 +33,13 @@
     * set timer
     * runs getQuestion function
 * time function
-* function for add questions and answer dynamically
+* function for adding questions and answer dynamically
 * function to cycle through questions
     * validate right or wrong
     * reduces timer if wrong
     * goes to next question
-    * if no more questions for to end of game screen
+    * if no more questions for go to result screen
+* function that will show the result
+    * final score will be the result of time left
+    * hide the div that holds the question 
     

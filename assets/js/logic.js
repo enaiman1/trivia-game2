@@ -95,6 +95,24 @@ function questionCycle(){
     }
 }
 
+// this function with display the final screen when the game is over
+function quizEnd(){
+    //stop timer
+    clearInterval(timerId);
+
+    // show result screen
+    var resultScreen = document.getElementById("resultScreen");
+    resultScreen.removeAttribute("class");
+
+    // show final score
+    var finalScore = document.getElementById("finalScore")
+    finalScore.textContent = time;
+
+    //hide question section
+    questionEl.setAttribute("class", "hide");
+}
+
+
 
 function clock(){
     // update time
