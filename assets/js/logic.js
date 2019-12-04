@@ -36,7 +36,7 @@ function getQuestion() {
     // get current question object from array
     var currentQuestion = questions[currentQuestionIndex];
 
-    // update title with current questions
+    // updates current questions
     var titleEl = document.getElementById("questionTitle");
     titleEl.textContent = currentQuestion.question;
 
@@ -52,12 +52,48 @@ function getQuestion() {
 
         choiceOption.textContent = i + 1 + ". " + choice;
 
+        // event listener to change questions
+        choiceOption.onclick = questionCycle;
+
         // attaches click event listener to each choice
         choicesEl.appendChild(choiceOption);
     });
 }
 
+// function to cycle through questions and validate right or wrong
+function questionCycle(){
+    // check if user quessed wrong
+    if (this.value !== questions[currentQuestionIndex].answer){
+        // penalize time
+        time -=15;
 
+        if (time < 0) {
+            time = 0;
+        }
+        timerEl.textContent = time;
+
+        // this tells user they are wrong
+        feedbackEl.textContent = "Incorrect!";
+    } else {
+        feedbackEl.textContent= "Correct!";
+    }
+    // This will display right/wrong feedback for half a second
+    feedbackEl.setAttribute("class", "feedback");
+    setTimeout(function(){
+        feedbackEl.setAttribute("class", "feedback hide");
+    }, 1000);
+
+    currentQuestionIndex++;
+
+    // this will check to see if we ran out of questions
+    if(currentQuestionIndex === questions.length){
+        // run end quiz function
+        quizEnd()
+    } else {
+        // gets next question
+        getQuestion()
+    }
+}
 
 
 function clock(){

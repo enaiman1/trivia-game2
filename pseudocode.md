@@ -34,5 +34,9 @@
     * runs getQuestion function
 * time function
 * function for add questions and answer dynamically
-
+* function to cycle through questions
+    * validate right or wrong
+    * reduces timer if wrong
+    * goes to next question
+    * if no more questions for to end of game screen
     
