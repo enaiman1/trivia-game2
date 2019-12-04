@@ -42,4 +42,5 @@
 * function that will show the result
     * final score will be the result of time left
     * hide the div that holds the question 
+* function to save high score
     

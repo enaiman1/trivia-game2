@@ -112,8 +112,6 @@ function quizEnd(){
     questionEl.setAttribute("class", "hide");
 }
 
-
-
 function clock(){
     // update time
     time--
@@ -121,9 +119,44 @@ function clock(){
     // check if user ran out of time
     if ( time <=0 ){
         // run quiz end function
-        
+        quizEnd()
+    }
+}
+// this function will save the highscore
+function highScore (){
+    // get value of input box
+    var initials = initialsEl.value.trim()
+
+    // check to make sure value is empty
+    if(initials !== ""){
+        // get saved score from localstorage,
+        // if there is not anything saved to localstorage, set as an empty array
+        var highScore = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+ //format new scores object for current user
+ var newScore = {
+     score: time,
+     initials: initials
+ };
+ highScore.push(newScore);
+ window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+//  redirect to next page
+window.location.href ="highscores.html";
+    }
+}
+
+function checkForEnter(event) {
+    if (event.key === "Enter") {
+        highscore()
     }
 }
 
 // starts game
 startBtn.onclick = startQuiz;
+
+// this event allows the user to submit their intials to add to the highscore
+submitBtn.onclick = highScore;
+
+// this event will check to see if the enter key was enter 
+initialsEl.onekeyup = checkForEnter;
