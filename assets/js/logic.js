@@ -159,4 +159,4 @@ startBtn.onclick = startQuiz;
 submitBtn.onclick = highScore;
 
 // this event will check to see if the enter key was enter 
-initialsEl.onekeyup = checkForEnter;
+initialsEl.onkeyup = checkForEnter;
